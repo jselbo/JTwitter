@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>JTwitter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<h1 id="banner">JTwitter Search</h1>
+<h5>Welcome, ${user}!</h5>
+
+<div id="header">
+	<ul>
+	<li> <a href="home.cgi">Home</a></li>
+	<li> <a href="edit_profile.cgi">Edit Profile</a> </li>
+	<li> <a href="search.cgi">Search</a> </li>
+	<li> <a href="logout.cgi">Log Out</a> </li>
+	</ul>
+</div>
+
+<div id="body-content">
+<hr />
+	<h4>${message}</h4>
+
+	<div id="search">
+	<form method="POST" action="search.cgi">
+	<input type="hidden" name="action" value="search" />
+	<input type="text" name="search_field" size="80" placeholder="Type a user here, e.g. dave" />
+	<input type="submit" value="Search" style="height:28px; width:100px" />
+	</form>
+	</div>
+
+	<div id="results">
+	${results}
+	</div>
+
+</div>
+</body>
+</html>

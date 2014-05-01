@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>JTwitter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--<meta http-equiv="refresh" content="15">-->
+	<script>
+	setTimeout(function() {
+		tweet_box = document.getElementById('tweet_box');
+		if (tweet_box.value.length == 0) {
+			window.location.reload(1);
+		}
+	}, 10000);
+
+	function setFocus() {
+		tb = document.getElementById('tweet_box');
+
+		// gain focus
+		tb.focus();
+
+		// set caret position to end
+		if (typeof tb.selectionStart == "number") {
+		    tb.selectionStart = tb.selectionEnd = tb.value.length;
+		} else if (typeof tb.createTextRange != "undefined") {
+		    tb.focus();
+		    var range = tb.createTextRange();
+		    range.collapse(false);
+		    range.select();
+		}
+	}
+	</script>
+</head>
+
+<body onload="setFocus()">
+<h1 id="banner">JTwitter Home</h1>
+<h5>Welcome, ${user}!</h5>
+
+<div id="header">
+	<ul>
+	<li> <a href="home.cgi">Home</a></li>
+	<li> <a href="edit_profile.cgi">Edit Profile</a> </li>
+	<li> <a href="search.cgi">Search</a> </li>
+	<li> <a href="logout.cgi">Log Out</a> </li>
+	</ul>
+</div>
+
+<div id="body-content">
+<hr />
+
+<h4 class="success">${message}</h4>
+
+<h3>What's on your mind?</h3><br />
+	<div id="tweet_field">
+	<form method="POST" action="home.cgi">
+	<input type="hidden" name="action" value="tweet" />
+	<textarea id="tweet_box" rows="4" cols="50" name="tweet_field" placeholder="Type your tweet here!">${tweet_text}</textarea>
+	<br />
+	<input type="submit" value="Tweet" style="height:28px; width:100px" />
+	</form>
+	</div>
+
+	<div id="tweets">
+	${tweets}
+	</div>
+
+</div>
+</body>
+</html>

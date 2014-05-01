@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>JTwitter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<h1 id="banner">JTwitter Register</h1>
+
+<div id="body-content">
+	<div id="login">
+	<h3>Register a new account:</h3>
+
+	<form method="POST" action="register.cgi">
+	<table>
+		<tr><th>Email:</th><td><input type="text" name="username"></td></tr>
+		<tr><th>Password:</th><td><input type="password" name="password"></td></tr>
+	</table>
+
+	<input type="hidden" name="action" value="register">
+	<input type="submit" value="Register">
+
+	<h4 class="error">${error}</h4>
+	</form>
+	</div>
+
+</div>
+
+</body>
+</html>

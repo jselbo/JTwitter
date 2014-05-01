@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>JTwitter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script>
+	function setFocus() {
+		document.getElementById('un_field').focus();
+	}
+	</script>
+</head>
+
+<body onload="setFocus()">
+<h1 id="banner">JTwitter Login</h1>
+
+<div id="body-content">
+	<h4 class="success">${message}</h4>
+
+	<div id="login">
+	<h3>Type User and Password:</h3>
+
+	<form method="POST" action="login.cgi">
+	<table>
+		<tr><th>Username:</th><td><input id="un_field" type="text" name="username" /></td></tr>
+		<tr><th>Password:</th><td><input type="password" name="password" /></td></tr>
+	</table>
+
+	<input type="hidden" name="action" value="login">
+	<input type="submit" value="Login">
+
+	<h4 class="error">${error}</h4>
+	</form>
+	</div>
+
+	<h4>Register a new account</h4>
+	<form action="register.cgi">
+	<input type="submit" value="Sign Up" />
+	</form>
+</div>
+
+</body>
+</html>
